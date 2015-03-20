@@ -5,18 +5,16 @@
 </head>
 <body>
     <div class="container">
-        <h1>Welcome to best restaurants!</h1>
-
-        <p>Create a new cuisine type:</p>
-
+        <h1>Welcome to Best Restaurants!</h1>
         <form action="/cuisine" method="post">
             <div class="form-group">
-                <label for="type">Type of cuisine:</label>
+                <label for="type">New Cuisine:</label>
                 <input id="type" name="type" type="text">
-                <button type="submit">Add cuisine</button>
-            </div>
+                <button type="submit" class='btn-xs btn-warning'>Add cuisine</button>
         </form>
+    </div>
 
+    <div class='container'>
         {% if cuisines is not empty %}
         <ul>
             {% for cuisine in cuisines %}
@@ -26,11 +24,13 @@
         {% else %}
             <p>There are no cuisine types to display!</p>
         {% endif %}
+    </div>
 
+    <div class='container'>
         <form action="/delete_cuisines" method="post">
-            <button type="submit">Delete cuisines</button>
+            <button type="submit" class="btn-xs btn-danger">Delete cuisines</button>
         </form>
-        
-    <div class="container">
+    </div>
+
 </body>
 </html>
